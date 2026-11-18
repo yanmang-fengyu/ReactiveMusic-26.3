@@ -105,10 +105,6 @@ GPLv3, inherited from the upstream project. Music assets remain the property of 
 
 ---
 
-### Important Notice
-
-This mod has been almost entirely modified from DeepSeek.If any issues occur, please send the logs; the author's ability is limited.
-
 
 ## 简体中文
 
