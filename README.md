@@ -6,6 +6,12 @@
 - 必需前置：`dist/yet_another_config_lib_v3-3.9.7+26.3-fabric.jar`（YACL，配置界面/配置读写）
 - 游戏前置：Fabric Loader ≥ 0.20.1、Fabric API 0.166.2+26.3、Java 25
 
+> **GitHub**：<https://github.com/yanmang-fengyu/ReactiveMusic-26.3>
+>
+> 仓库只包含源码、构建脚本和文档；61 首音乐素材（约 282 MB）因版权与体积原因不入库。
+> 打包好的完整 jar 见仓库的 [Releases](https://github.com/yanmang-fengyu/ReactiveMusic-26.3/releases)，
+> 也可以把上游音乐素材放进 `src/main/resources/musicpack/music/` 后自行 `gradle build`。
+
 ## 安装
 
 把这两个 jar 丢进 26.3 实例的 `mods` 文件夹：
