@@ -1,0 +1,69 @@
+buildscript {
+	repositories {
+		maven { url 'https://maven.fabricmc.net/' }
+		maven { url 'https://maven.aliyun.com/repository/public' }
+		mavenCentral()
+	}
+	dependencies {
+		classpath "net.fabricmc:fabric-loom:${loom_version}"
+	}
+}
+
+// NOTE: "net.fabricmc.fabric-loom" is the no-remap marker plugin used for unobfuscated
+// Minecraft versions (26.1+). It must be applied before the classic "fabric-loom" plugin.
+apply plugin: 'net.fabricmc.fabric-loom'
+
+version = project.mod_version + "+" + project.minecraft_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+loom {
+	runConfigs.client.runDir = "run-26.3"
+}
+
+if (project.hasProperty("quickPlayWorld")) {
+	loom.runConfigs.client.programArguments.addAll(["--quickPlaySingleplayer", project.property("quickPlayWorld").toString()])
+}
+
+repositories {
+	maven { url "https://maven.terraformersmc.com/releases/" }
+	maven { url 'https://maven.isxander.dev/releases' }
+	maven { url 'https://maven.aliyun.com/repository/public' }
+	mavenCentral()
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// optional integrations
+	compileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+	implementation("dev.isxander:yet-another-config-lib:${project.yacl_version}")
+}
+
+processResources {
+	inputs.property "version", project.version
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+	it.options.encoding = "UTF-8"
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.base.archivesName.get()}"}
+	}
+}

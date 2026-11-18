@@ -1,0 +1,80 @@
+# ============================================================
+#  反应式音乐 · 音乐包模板
+#  用法：
+#   1. 把整个「音乐包模板」文件夹复制到 .minecraft/resourcepacks/ 下，改名为你的音乐包名
+#   2. 把 mp3 放进 music/ 文件夹（文件名 = 歌名，不含 .mp3）
+#   3. 按需修改下面的条目，进游戏 → 配置界面 → 音乐包 → 加载
+# ============================================================
+
+name: "我的音乐包"
+version: "1.0"
+author: "你的名字"
+description: "一句话介绍这个音乐包。"
+credits: "音乐来源 / 鸣谢信息。"
+
+# 歌曲间隔预设：NONE / SHORT(12.5s) / NORMAL(45s) / LONG(120s)
+musicDelayLength: NORMAL
+
+# 情境失效后多久开始淡出：INSTANT(5s) / SHORT(12.5s) / NORMAL(45s) / LONG(120s)
+musicSwitchSpeed: NORMAL
+
+entries:
+
+  # ---- 标题界面 ----
+  - events: [ "MAIN_MENU" ]
+    forceStopMusicOnChanged: true
+    forceStartMusicOnValid: true
+    songs:
+      - "Title"
+
+  # ---- 白天（兜底，放后面） ----
+  - events: [ "DAY" ]
+    songs:
+      - "Day1"
+      - "Day2"
+
+  # ---- 夜晚 ----
+  - events: [ "NIGHT" ]
+    songs:
+      - "Night1"
+      - "Night2"
+
+  # ---- 下雨（与 DAY 是「且」关系：白天+下雨） ----
+  - events: [ "DAY", "RAIN" ]
+    songs:
+      - "Rain1"
+
+  # ---- 下矿（Y<55 且看不到天空） ----
+  - events: [ "UNDERGROUND" ]
+    forceStopMusicOnChanged: true
+    songs:
+      - "Cave1"
+
+  # ---- Boss 战 ----
+  - events: [ "BOSS" ]
+    forceStopMusicOnChanged: true
+    forceStartMusicOnValid: true
+    songs:
+      - "Boss1"
+
+  # ---- 维度：下界 ----
+  - events: [ "DIM=the_nether" ]
+    forceStopMusicOnChanged: true
+    songs:
+      - "Nether1"
+
+  # ---- 生物群系标签：森林（多个标签用 || 表示「或」） ----
+  - events: [ "DAY", "BIOMETAG=forest||BIOMETAG=taiga" ]
+    songs:
+      - "Forest1"
+
+  # ---- 方块条件：周围 25 格内某种方块数量 ----
+  # - events: [ "DIM=the_nether", "BLOCK=nether_bricks,800" ]
+  #   songs:
+  #     - "Fortress"
+
+  # ---- 兜底：其它情况都放这个 ----
+  - events: [ "GENERIC" ]
+    allowFallback: true
+    songs:
+      - "Day1"

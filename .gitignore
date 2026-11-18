@@ -1,0 +1,50 @@
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+
+*.launch
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+run/
+run-*/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# 本仓私有：构建产物 / 上游素材 / 历史快照 / 日志
+dist/
+vendor/
+_history/
+*.log
+
+# 音乐素材来自上游模组，受其各自版权约束，不随源码分发
+src/main/resources/musicpack/music/*.mp3
