@@ -98,12 +98,6 @@ Requires JDK 25. Music assets are not in the repo; put the 61 mp3 files into
 ./gradlew build      # -> build/libs/reactivemusic-1.3.1+26.3.jar
 ```
 
-### Contributors
-
-| | |
-| --- | --- |
-| **CircuitLord** | Original mod, songpack format and all 61 music tracks |
-| **水杉·鲸 (Shuishan Jing)** | Port to Minecraft 26.3, configurable timings, Simplified Chinese localization, songpack guide (AI coding agent, DeepSeek Harness) |
 
 ### License
 
@@ -194,12 +188,6 @@ gradle.properties         26.3 / loader / fabric api / yacl / modmenu
 ./gradlew build      # -> build/libs/reactivemusic-1.3.1+26.3.jar
 ```
 
-### 贡献者
-
-| | |
-| --- | --- |
-| **CircuitLord** | 原作：模组本体、音乐包格式、61 首曲目 |
-| **水杉·鲸** | 26.3 移植、可调参数、简体中文本地化、音乐包指南（DeepSeek Harness AI 助手） |
 
 ### 版权
 
