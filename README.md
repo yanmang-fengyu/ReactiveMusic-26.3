@@ -123,7 +123,6 @@ ReactiveMusic/                   ← 本移植工程（git 仓库根目录）
 │  └─ resources/                 ← fabric.mod.json / mixins / lang / 音乐包
 ├─ docs/                         ← 音乐包制作指南 + 模板
 ├─ dist/                         ← 成品 jar + YACL（不入库）
-├─ vendor/                       ← 上游 1.3.5 官方 jar（音频来源，不入库）
 └─ _history/                     ← 上游源码快照 / 1.21.9 迁移工程（不入库）
 ```
 
@@ -146,4 +145,4 @@ D:\work\AI_work\minecraft\_toolchain\gradle-9.8.2\bin\gradle.bat build
 
 ## 版权
 
-原模组与音乐素材版权归 CircuitLord 所有，许可证 GPLv3（见 `LICENSE`）。此移植仅为个人使用。
+原模组与音乐素材版权归 CircuitLord 所有，许可证 GPLv3（见 `LICENSE`）。本项目为非官方移植，同样以 GPLv3 发布；音乐素材不随仓库分发。
