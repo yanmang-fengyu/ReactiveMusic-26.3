@@ -105,6 +105,11 @@ GPLv3, inherited from the upstream project. Music assets remain the property of 
 
 ---
 
+### Important Notice
+
+This mod has been almost entirely modified from DeepSeek.If any issues occur, please send the logs; the author's ability is limited.
+
+
 ## 简体中文
 
 ### 安装
@@ -192,3 +197,10 @@ gradle.properties         26.3 / loader / fabric api / yacl / modmenu
 ### 版权
 
 沿用上游 GPLv3。音乐素材版权归各自作者所有，不随本仓库分发。
+
+### 重要提示
+
+本模组几乎全由 deepseek 更改而来，若出了问题记得发运行日志，作者能力不好
+
+
+
