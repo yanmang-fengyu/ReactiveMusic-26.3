@@ -1,0 +1,81 @@
+# ============================================================
+#  Reactive Music · Songpack Template (English)
+#  How to use:
+#   1. Copy this whole folder into .minecraft/resourcepacks/ and rename it
+#   2. Put your mp3 files into music/ (file name = song name, without .mp3)
+#   3. Edit the entries below, then in game: config screen -> Songpacks -> Load
+#  Chinese version: docs/音乐包模板/
+# ============================================================
+
+name: "My Pack"
+version: "1.0"
+author: "Your name"
+description: "One sentence about this songpack."
+credits: "Music sources / credits."
+
+# Silence between songs: NONE / SHORT(12.5s) / NORMAL(45s) / LONG(120s)
+musicDelayLength: NORMAL
+
+# How long before fading out when the situation goes away: INSTANT(5s) / SHORT(12.5s) / NORMAL(45s) / LONG(120s)
+musicSwitchSpeed: NORMAL
+
+entries:
+
+  # ---- Title screen ----
+  - events: [ "MAIN_MENU" ]
+    forceStopMusicOnChanged: true
+    forceStartMusicOnValid: true
+    songs:
+      - "Title"
+
+  # ---- Daytime (fallback, keep it late) ----
+  - events: [ "DAY" ]
+    songs:
+      - "Day1"
+      - "Day2"
+
+  # ---- Night ----
+  - events: [ "NIGHT" ]
+    songs:
+      - "Night1"
+      - "Night2"
+
+  # ---- Rain (AND with DAY: daytime + raining) ----
+  - events: [ "DAY", "RAIN" ]
+    songs:
+      - "Rain1"
+
+  # ---- Underground (Y<55 and cannot see the sky) ----
+  - events: [ "UNDERGROUND" ]
+    forceStopMusicOnChanged: true
+    songs:
+      - "Cave1"
+
+  # ---- Boss fight ----
+  - events: [ "BOSS" ]
+    forceStopMusicOnChanged: true
+    forceStartMusicOnValid: true
+    songs:
+      - "Boss1"
+
+  # ---- Dimension: the Nether ----
+  - events: [ "DIM=the_nether" ]
+    forceStopMusicOnChanged: true
+    songs:
+      - "Nether1"
+
+  # ---- Biome tags: forest (multiple tags with || means OR) ----
+  - events: [ "DAY", "BIOMETAG=forest||BIOMETAG=taiga" ]
+    songs:
+      - "Forest1"
+
+  # ---- Block condition: block count within a 25 block radius ----
+  # - events: [ "DIM=the_nether", "BLOCK=nether_bricks,800" ]
+  #   songs:
+  #     - "Fortress"
+
+  # ---- Fallback: everything else ----
+  - events: [ "GENERIC" ]
+    allowFallback: true
+    songs:
+      - "Day1"

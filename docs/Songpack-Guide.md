@@ -229,5 +229,6 @@ Drop it into `resourcepacks/`. Players can switch between multiple packs in the 
 ## 9. References
 
 - Built-in songpack: [`src/main/resources/musicpack/ReactiveMusic.yaml`](../src/main/resources/musicpack/ReactiveMusic.yaml)
-- Template: [`docs/音乐包模板/`](音乐包模板/) (copy, rename, edit)
+- Template (English comments): [docs/songpack-template/](songpack-template/) — copy, rename, edit
+- Template (Chinese comments): [docs/音乐包模板/](音乐包模板/)
 - Upstream project: <https://github.com/CircuitLord/ReactiveMusic>

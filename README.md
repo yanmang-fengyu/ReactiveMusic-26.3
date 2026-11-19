@@ -51,7 +51,7 @@ Config file: `.minecraft/config/ReactiveMusic.json5`.
 
 **Simplified Chinese** — new `assets/reactivemusic/lang/zh_cn.json`; every category, option, tooltip, button and command message is translated. Hard-coded English strings were replaced with translation keys, so adding another language is just another json file. Follows the in-game language.
 
-**Songpack authoring guide** — [`docs/Songpack-Guide.md`](docs/Songpack-Guide.md) (English) and the Chinese version [`docs/音乐包制作指南.md`](docs/音乐包制作指南.md); a ready-to-copy template lives in [`docs/音乐包模板/`](docs/音乐包模板/).
+**Songpack authoring guide** — [`docs/Songpack-Guide.md`](docs/Songpack-Guide.md) (English) and the Chinese version [`docs/音乐包制作指南.md`](docs/音乐包制作指南.md); ready-to-copy templates live in [`docs/songpack-template/`](docs/songpack-template/) (English) and [`docs/音乐包模板/`](docs/音乐包模板/) (Chinese).
 
 ### What was changed for 26.3
 
@@ -154,7 +154,7 @@ Fabric API 一般已经装了（`fabric-api-0.166.2+26.3.jar` 正好匹配）。
 
 **简体中文** —— 新增 `assets/reactivemusic/lang/zh_cn.json`，配置界面的分类、选项、按钮、悬浮说明、命令提示全部中文化；源码里硬编码的英文文本换成了可翻译键，以后加语言只需加 json。跟随游戏语言生效。
 
-**音乐包指南** —— 英文版 [`docs/Songpack-Guide.md`](docs/Songpack-Guide.md)，中文版 [`docs/音乐包制作指南.md`](docs/音乐包制作指南.md)，以及可直接复制的 [`docs/音乐包模板/`](docs/音乐包模板/)。
+**音乐包指南** —— 英文版 [`docs/Songpack-Guide.md`](docs/Songpack-Guide.md)，中文版 [`docs/音乐包制作指南.md`](docs/音乐包制作指南.md)，以及可直接复制的 [`docs/songpack-template/`](docs/songpack-template/)（英文）与 [`docs/音乐包模板/`](docs/音乐包模板/)（中文）。
 
 ### 这次移植做了什么
 
