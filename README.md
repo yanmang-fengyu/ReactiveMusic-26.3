@@ -1,20 +1,26 @@
-# Reactive Music — Minecraft 26.3 (Fabric) Port
+# Reactive Music — Minecraft 26.3（Fabric）
 
 [English](#english) | [简体中文](#简体中文)
 
-Unofficial port of [CircuitLord/ReactiveMusic](https://github.com/CircuitLord/ReactiveMusic) from **Minecraft 1.21.9 / Yarn mappings** to **Minecraft 26.3 (Fabric)**.
-
-- Download: [Releases](https://github.com/yanmang-fengyu/ReactiveMusic-26.3/releases) — `reactivemusic-1.3.1+26.3.jar` (281 MB, 61 built-in tracks)
-- Required: `yet_another_config_lib_v3-3.9.7+26.3-fabric.jar` (YACL, config screen + config I/O)
-- Runtime: Fabric Loader ≥ 0.20.1, Fabric API 0.166.2+26.3, Java 25
-
-> The repository contains source code, build scripts and docs only.
-> The 61 music tracks (~282 MB) are **not** committed (size + copyright); grab the ready-to-play jar from [Releases](https://github.com/yanmang-fengyu/ReactiveMusic-26.3/releases),
-> or drop upstream assets into `src/main/resources/musicpack/music/` and build yourself.
+Unofficial port of [CircuitLord/ReactiveMusic](https://github.com/CircuitLord/ReactiveMusic) from Minecraft 1.21.9 (Yarn mappings) to Minecraft 26.3 (Fabric).
+[CircuitLord/ReactiveMusic](https://github.com/CircuitLord/ReactiveMusic) 的非官方移植版，从 Minecraft 1.21.9（Yarn 映射）迁移到 Minecraft 26.3（Fabric）。
 
 ---
 
 ## English
+
+### Overview
+
+| | |
+| --- | --- |
+| Download | [Releases](https://github.com/yanmang-fengyu/ReactiveMusic-26.3/releases) — `reactivemusic-1.3.1+26.3.jar` (281 MB, 61 built-in tracks) |
+| Required mod | `yet_another_config_lib_v3-3.9.7+26.3-fabric.jar` (YACL — config screen and config I/O) |
+| Runtime | Fabric Loader ≥ 0.20.1, Fabric API 0.166.2+26.3, Java 25 |
+
+This repository contains source code, build scripts and documentation only.
+The 61 music tracks (~282 MB) are **not** committed (size + copyright): get the ready-to-play jar from
+[Releases](https://github.com/yanmang-fengyu/ReactiveMusic-26.3/releases), or put the upstream assets into
+`src/main/resources/musicpack/music/` and build it yourself.
 
 ### Installation
 
@@ -26,7 +32,7 @@ yet_another_config_lib_v3-3.9.7+26.3-fabric.jar
 ```
 
 Fabric API is usually already installed (`fabric-api-0.166.2+26.3.jar` matches).
-Music starts on the title screen; `/reactivemusic` opens the config screen (requires YACL).
+Music starts on the title screen; `/reactivemusic` opens the config screen.
 
 ### What this port adds (1.3.1)
 
@@ -45,11 +51,11 @@ Config file: `.minecraft/config/ReactiveMusic.json5`.
 
 **Simplified Chinese** — new `assets/reactivemusic/lang/zh_cn.json`; every category, option, tooltip, button and command message is translated. Hard-coded English strings were replaced with translation keys, so adding another language is just another json file. Follows the in-game language.
 
-**Songpack authoring guide** — [`docs/音乐包制作指南.md`](docs/音乐包制作指南.md) (Chinese) and a ready-to-copy template in [`docs/音乐包模板/`](docs/音乐包模板/).
+**Songpack authoring guide** — [`docs/Songpack-Guide.md`](docs/Songpack-Guide.md) (English) and the Chinese version [`docs/音乐包制作指南.md`](docs/音乐包制作指南.md); a ready-to-copy template lives in [`docs/音乐包模板/`](docs/音乐包模板/).
 
 ### What was changed for 26.3
 
-1. **Mapping migration** — Minecraft 26.1+ ships unobfuscated, and Fabric dropped Yarn:
+1. **Mapping migration** — Minecraft 26.1+ ships unobfuscated and Fabric dropped Yarn:
 
    | 1.21.9 / Yarn | 26.3 / official |
    | --- | --- |
@@ -84,7 +90,7 @@ Known gap: in-world situation detection (biomes, mobs, weather) was reviewed aga
 
 ```
 src/main/…                ported sources & resources (java + assets + musicpack)
-docs/                     songpack guide and template
+docs/                     songpack guides (English / Chinese) and template
 build.gradle              no-remap Loom setup and dependencies
 gradle.properties         26.3 / loader / fabric api / yacl / modmenu
 ```
@@ -98,7 +104,6 @@ Requires JDK 25. Music assets are not in the repo; put the 61 mp3 files into
 ./gradlew build      # -> build/libs/reactivemusic-1.3.1+26.3.jar
 ```
 
-
 ### License
 
 GPLv3, inherited from the upstream project. Music assets remain the property of their respective authors and are not distributed here.
@@ -107,6 +112,18 @@ GPLv3, inherited from the upstream project. Music assets remain the property of 
 
 
 ## 简体中文
+
+### 简介
+
+| | |
+| --- | --- |
+| 下载 | [Releases](https://github.com/yanmang-fengyu/ReactiveMusic-26.3/releases) —— `reactivemusic-1.3.1+26.3.jar`（281 MB，含 61 首曲目） |
+| 必需模组 | `yet_another_config_lib_v3-3.9.7+26.3-fabric.jar`（YACL，配置界面与配置读写） |
+| 运行环境 | Fabric Loader ≥ 0.20.1、Fabric API 0.166.2+26.3、Java 25 |
+
+本仓库只包含源码、构建脚本和文档。61 首音乐素材（约 282 MB）因体积与版权原因**不随仓库分发**：
+完整可玩的 jar 请从 [Releases](https://github.com/yanmang-fengyu/ReactiveMusic-26.3/releases) 下载，
+或者把上游素材放进 `src/main/resources/musicpack/music/` 后自行构建。
 
 ### 安装
 
@@ -118,7 +135,7 @@ yet_another_config_lib_v3-3.9.7+26.3-fabric.jar
 ```
 
 Fabric API 一般已经装了（`fabric-api-0.166.2+26.3.jar` 正好匹配）。
-进游戏后主菜单就会开始播放；`/reactivemusic` 打开配置界面（需要 YACL）。
+进游戏后主菜单就会开始播放；`/reactivemusic` 打开配置界面。
 
 ### 本次新增（1.3.1）
 
@@ -137,7 +154,7 @@ Fabric API 一般已经装了（`fabric-api-0.166.2+26.3.jar` 正好匹配）。
 
 **简体中文** —— 新增 `assets/reactivemusic/lang/zh_cn.json`，配置界面的分类、选项、按钮、悬浮说明、命令提示全部中文化；源码里硬编码的英文文本换成了可翻译键，以后加语言只需加 json。跟随游戏语言生效。
 
-**音乐包指南** —— [`docs/音乐包制作指南.md`](docs/音乐包制作指南.md)，以及可直接复制的 [`docs/音乐包模板/`](docs/音乐包模板/)。
+**音乐包指南** —— 英文版 [`docs/Songpack-Guide.md`](docs/Songpack-Guide.md)，中文版 [`docs/音乐包制作指南.md`](docs/音乐包制作指南.md)，以及可直接复制的 [`docs/音乐包模板/`](docs/音乐包模板/)。
 
 ### 这次移植做了什么
 
@@ -176,7 +193,7 @@ Fabric API 一般已经装了（`fabric-api-0.166.2+26.3.jar` 正好匹配）。
 
 ```
 src/main/…                已移植的源码与资源（java + assets + 音乐包）
-docs/                     音乐包制作指南与模板
+docs/                     音乐包指南（英文 / 中文）与模板
 build.gradle              Loom 无重映射 + 依赖
 gradle.properties         26.3 / loader / fabric api / yacl / modmenu
 ```
@@ -188,7 +205,6 @@ gradle.properties         26.3 / loader / fabric api / yacl / modmenu
 ```bash
 ./gradlew build      # -> build/libs/reactivemusic-1.3.1+26.3.jar
 ```
-
 
 ### 版权
 
