@@ -104,6 +104,15 @@ Requires JDK 25. Music assets are not in the repo; put the 61 mp3 files into
 ./gradlew build      # -> build/libs/reactivemusic-1.3.1+26.3.jar
 ```
 
+On Windows there is a convenience wrapper, `build.ps1` (or double-click `build.cmd`): it locates JDK 25 and Gradle, builds, copies the jar to `dist\`, and with `-Install` also installs it into the 26.3 instance's `mods` folder.
+
+```powershell
+pwsh -File build.ps1            # build only
+pwsh -File build.ps1 -Install   # build + install
+```
+
+> Inside a restricted sandbox (where Java sees workspace files as read-only) the build fails — run the script from a normal terminal.
+
 ### License
 
 GPLv3, inherited from the upstream project. Music assets remain the property of their respective authors and are not distributed here.
@@ -205,6 +214,15 @@ gradle.properties         26.3 / loader / fabric api / yacl / modmenu
 ```bash
 ./gradlew build      # -> build/libs/reactivemusic-1.3.1+26.3.jar
 ```
+
+Windows 上提供了 `build.ps1`（或直接双击 `build.cmd`）：自动定位 JDK 25 和 Gradle、构建、把 jar 复制到 `dist\`，加 `-Install` 还会安装到 26.3 实例的 `mods` 目录。
+
+```powershell
+pwsh -File build.ps1            # 只构建
+pwsh -File build.ps1 -Install   # 构建并安装
+```
+
+> 如果运行在受限沙箱里（Java 会把工作区文件判定为只读），构建会失败——请在普通终端里运行脚本。
 
 ### 版权
 
